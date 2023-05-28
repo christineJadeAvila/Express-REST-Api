@@ -1,14 +1,35 @@
 const express = require('express');
 const app = express();
-const PORT = 8080;
+const PORT = 3000;
 
 app.use(express.json());
+
+const tshirts = [
+    { 
+        tshirt: "levis",
+        size: "size 6"
+    },
+    
+    { 
+        tshirt: "levis",
+        size: "size 4"
+    },
+
+    { 
+        tshirt: "levis",
+        size: "size 12"
+    },
+]
+
 app.get('/tshirt', (req, res) => {
-    res.status(200).send({
-        tshirt: 'levis',
-        size: 'large'
-    })
+    tshirts.forEach(
+        tshirt => (
+            res.status(200).send(tshirts)
+        )
+    )
 });
+
+
 
 
 app.post('/tshirt/:id', (req, res) => {
