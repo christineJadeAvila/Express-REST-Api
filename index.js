@@ -29,6 +29,7 @@ app.get('/tshirt', (req, res) => {
     )
 });
 
+tshirts.forEach( tshirt => (console.log(tshirt)))
 
 
 
